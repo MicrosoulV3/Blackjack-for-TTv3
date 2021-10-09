@@ -1,7 +1,4 @@
 <html>
-	<head>
-		<title>TT 3.0 PHP 7 Blackjack Install Instructions</title>
-	</head>
 	<body marginheight='0' marginwidth='0' leftmargin='0' topmargin='0' bgcolor='#FFFFFF'>
 		<div id='logostrip'><img src='./' border='0' alt='TT 3.0 Mod' /></div>
 		<div class='fade'>&nbsp;</div>
