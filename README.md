@@ -1,0 +1,306 @@
+# Blackjack-for-TTv3
+A blackjack game for use with torrenttrader v3
+<html>
+	<head>
+		<title>TT 3.0 PHP 7 Blackjack Install Instructions</title>
+		<style type='text/css'>
+			BODY { font-size:11px; font-family:Verdana,Arial; color:#000; margin:0px; padding:0px; background-image:url(./ignore_this_folder/fadebg.jpg); background-repeat:no-repeat; background-position:right bottom; }
+			TABLE, TR, TD { font-family:Verdana,Arial;font-size:11px; color:#000; }
+			TEXTAREA { background-color:#DFE6EF; font-size:11px; overflow:hidden; }
+			a:link, a:visited, a:active { color:#000055; }
+			a:hover { color:#333377; text-decoration:underline; }
+			.tdrow1 { background-color:#EEF2F7; border-bottom:1px solid #D1DCEB; border-right:1px solid #D1DCEB; border-top:1px solid #FFF; border-left:1px solid #FFF; font-size:12px; }
+			.tdrow2 { background-color:#F5F9FD; border-bottom:1px solid #D1DCEB; border-right:1px solid #D1DCEB; border-top:1px solid #FFF; border-left:1px solid #FFF; font-size:12px; }
+			.warnbox { border:1px solid #F00; background:#FFE0E0; padding:6px; margin-right:10%; margin-left:10%; text-align:left; }
+			.pformstrip { background-color:#D1DCEB; color:#3A4F6C; font-weight:bold; padding:7px; margin-top:1px; text-align:left; }
+			.tableborder { border:1px solid #345487; background-color:#FFF; padding:0px; margin:0px; width:100%; }
+			.maintitle { text-align:left; vertical-align:middle; font-weight:bold; color:#000; letter-spacing:1px; padding:8px 0px 8px 5px; background-image:url(./ignore_this_folder/tile_back.gif); }
+			.fade { background-image:url(./ignore_this_folder/fade.jpg); background-repeat:repeat-x; }
+			#copy { font-size:10px; }
+			#button { background-color:#4C77B6; color:#FFFFFF; font-family:Verdana,Arial; font-size:11px; }
+			#logostrip { padding:0px; margin:0px; background:#3860BB url(./ignore_this_folder/tile_back.gif); }
+		</style>
+	</head>
+	<body marginheight='0' marginwidth='0' leftmargin='0' topmargin='0' bgcolor='#FFFFFF'>
+		<div id='logostrip'><img src='./' border='0' alt='TT 3.0 Mod' /></div>
+		<div class='fade'>&nbsp;</div>
+		<br />
+		<div class='warnbox' style='text-align:center;'>
+			<strong>TT 3.0 PHP 7 Blackjack Install Instructions</strong>
+		</div>
+		<br />
+		<div style='padding:10px'>
+			<div class='tableborder'>
+				<div class='maintitle'>File date</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' valign='middle'>
+							Mar 7, 2019
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br />
+			<div class='tableborder'>
+				<div class='maintitle'>Description</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' valign='middle'>
+							Play for ratio points in a game of blackjack. I take no credit, Im just posting it for others to use. I only slightly edited this to use the config for bet settings and a few other minor things. The default bet is 1GB of upload credit. You can change this in the config.php file.
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br />
+			<div class='tableborder'>
+				<div class='maintitle'>Compatibility</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' valign='middle'>
+							TT 3.0 PHP 7
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br />
+			<br />
+			<div class='tableborder'>
+				<div class='maintitle'>Files Affected</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' valign='middle'>
+							<ul>
+								<li>
+									config.php</li>
+							</ul>
+							<strong>Be sure to back up these files before continuing!</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+						<div class='tableborder'>
+				<div class='maintitle'>SQL edits?</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' valign='middle'>
+							<ul>
+								<li>
+									<font color="red"><b>YES</b></font></li>
+							</ul>
+							<strong>Be sure to back up your database before continuing!</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br />
+			<div class='tableborder'>
+				<div class='maintitle'>Step 1: Files/Folders To Upload</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' align='center'>
+							<div class='tdrow1' style='padding:6px'>
+								<table class='tableborder' cellspacing='0' cellpadding='5' align='center' style='width: 75%;'>
+									<tr>
+										<td class='pformstrip' width='50%' style='text-align: center;'>
+											File/Folder</td>
+										<td class='pformstrip' width='50%' style='text-align: center;'>
+											Upload To</td>
+									</tr>
+																		<tr>
+										<td class='tdrow1' width='50%' align='center'>cards</td>
+										<td class='tdrow1' width='50%' align='center'>/images/</td>
+									</tr>
+									<tr>
+										<td class='tdrow1' width='50%' align='center'>as_blackjack.jpg</td>
+										<td class='tdrow1' width='50%' align='center'>/images/</td>
+									</tr>
+									<tr>
+										<td class='tdrow1' width='50%' align='center'>valet_blackjack.jpg</td>
+										<td class='tdrow1' width='50%' align='center'>/images/</td>
+									</tr>
+									<tr>
+										<td class='tdrow1' width='50%' align='center'>blackjack.png</td>
+										<td class='tdrow1' width='50%' align='center'>/images/</td>
+									</tr>
+								<tr>
+										<td class='tdrow1' width='50%' align='center'>blackjack.php</td>
+										<td class='tdrow1' width='50%' align='center'>site root folder</td>
+									</tr>
+																		<tr>
+										<td class='tdrow1' width='50%' align='center'>bjstats.php</td>
+										<td class='tdrow1' width='50%' align='center'>site root folder</td>
+									</tr>
+																											<tr>
+										<td class='tdrow1' width='50%' align='center'>info_blackjack.html</td>
+										<td class='tdrow1' width='50%' align='center'>site root folder</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br />
+			<br />
+			<div class='tableborder'>
+				<div class='maintitle'>Step 3: File Edits (Click code boxes to highlight all code in the box)</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' valign='middle' align='center'>
+							Open config.php 
+
+							<br />
+							<br />
+							Add:
+							<br />
+							<textarea rows="14" cols="100" wrap="SOFT" READONLY onclick="this.select()">//Blackjack game bets. $site_config['betsize']*1024*1024*1024 in blackjack.php
+$site_config['betsize'] = 1;	//1 equals 1gb of ratio to wager. .5 equals 512mb. Do some math to work out other values
+</textarea>
+							<br />
+							<br />
+							<br />
+							<br />
+							Open languages/english.php
+							<br />
+							<br />
+							Add:
+							<br />
+							<textarea rows="25" cols="100" wrap="SOFT" READONLY onclick="this.select()">
+$LANG["YOU_MUST_COLLECT_21"] = "You must collect 21 points without going over.";
+$LANG["NOTE"] = "NOTE";
+$LANG["BY_PLAYING"] = "By playing blackjack, you are betting %s of upload credit!";
+$LANG["START"] = "Start!";
+$LANG["PERSONNAL_STATISTICS"] = "Personal Statistics";
+$LANG["WINS"] = "Wins";
+$LANG["LOSSES"] = "Losses";
+$LANG["GAMES_PLAYED"] = "Games Played";
+$LANG["WIN_PERCENTAGE"] = "Win Percentage";
+$LANG["ERROR1"] = "You must finish your old game first.";
+$LANG["CONTINUE_OLD_GAME"] = "Continue old game";
+$LANG["GAME_OVER"] = "Game Over!";
+$LANG["YOUR_OPPONENT_WAS"] = "Your opponent was";
+$LANG["THEY_HAD"] = "they had";
+$LANG["PLAY_AGAIN"] = "Play again";
+$LANG["WELCOME"] = "Welcome";
+$LANG["HIT_ME"] = "Hit Me";
+$LANG["ODTHER_PLAYERS1"] = "There are no other players, so you'll have to wait until someone plays against you.";
+$LANG["ODTHER_PLAYERS2"] = "You will receive a PM with the game results.";
+$LANG["ERROR_YOU_LAST_GAME"] = "You'll have to wait until your last game completes before you play a new one.";
+</textarea>
+							<br />
+							<br />
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br />
+			<div class='tableborder'>
+				<div class='maintitle'>Step 4: SQL Edits (Click code boxes to highlight all code in the box)</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' valign='middle' align='center'>
+							Execute this SQL with phpmyadmin or whatever you are using
+							<br />
+							<br />
+							<br />
+							<textarea rows="73" cols="100" wrap="SOFT" READONLY onclick="this.select()">
+CREATE TABLE `blackjack` (
+`userid` int(11) NOT NULL default '0',
+`points` int(11) NOT NULL default '0',
+`status` enum('playing','waiting') NOT NULL default 'playing',
+`cards` text NOT NULL,
+`date` datetime DEFAULT NULL,
+PRIMARY KEY (`userid`)
+) ENGINE=MyISAM;
+
+CREATE TABLE `cards` (
+`id` int(11) NOT NULL auto_increment,
+`points` int(11) NOT NULL default '0',
+`pic` text NOT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=MyISAM;
+
+
+INSERT INTO `cards` VALUES (1, 2, '2p.bmp');
+INSERT INTO `cards` VALUES (2, 3, '3p.bmp');
+INSERT INTO `cards` VALUES (3, 4, '4p.bmp');
+INSERT INTO `cards` VALUES (4, 5, '5p.bmp');
+INSERT INTO `cards` VALUES (5, 6, '6p.bmp');
+INSERT INTO `cards` VALUES (6, 7, '7p.bmp');
+INSERT INTO `cards` VALUES (7, 8, '8p.bmp');
+INSERT INTO `cards` VALUES (8, 9, '9p.bmp');
+INSERT INTO `cards` VALUES (9, 10, '10p.bmp');
+INSERT INTO `cards` VALUES (10, 10, 'vp.bmp');
+INSERT INTO `cards` VALUES (11, 10, 'dp.bmp');
+INSERT INTO `cards` VALUES (12, 10, 'kp.bmp');
+INSERT INTO `cards` VALUES (13, 1, 'tp.bmp');
+INSERT INTO `cards` VALUES (14, 2, '2b.bmp');
+INSERT INTO `cards` VALUES (15, 3, '3b.bmp');
+INSERT INTO `cards` VALUES (16, 4, '4b.bmp');
+INSERT INTO `cards` VALUES (17, 5, '5b.bmp');
+INSERT INTO `cards` VALUES (18, 6, '6b.bmp');
+INSERT INTO `cards` VALUES (19, 7, '7b.bmp');
+INSERT INTO `cards` VALUES (20, 8, '8b.bmp');
+INSERT INTO `cards` VALUES (21, 9, '9b.bmp');
+INSERT INTO `cards` VALUES (22, 10, '10b.bmp');
+INSERT INTO `cards` VALUES (23, 10, 'vb.bmp');
+INSERT INTO `cards` VALUES (24, 10, 'db.bmp');
+INSERT INTO `cards` VALUES (25, 10, 'kb.bmp');
+INSERT INTO `cards` VALUES (26, 1, 'tb.bmp');
+INSERT INTO `cards` VALUES (27, 2, '2k.bmp');
+INSERT INTO `cards` VALUES (28, 3, '3k.bmp');
+INSERT INTO `cards` VALUES (29, 4, '4k.bmp');
+INSERT INTO `cards` VALUES (30, 5, '5k.bmp');
+INSERT INTO `cards` VALUES (31, 6, '6k.bmp');
+INSERT INTO `cards` VALUES (32, 7, '7k.bmp');
+INSERT INTO `cards` VALUES (33, 8, '8k.bmp');
+INSERT INTO `cards` VALUES (34, 9, '9k.bmp');
+INSERT INTO `cards` VALUES (35, 10, '10k.bmp');
+INSERT INTO `cards` VALUES (36, 10, 'vk.bmp');
+INSERT INTO `cards` VALUES (37, 10, 'dk.bmp');
+INSERT INTO `cards` VALUES (38, 10, 'kk.bmp');
+INSERT INTO `cards` VALUES (39, 1, 'tk.bmp');
+INSERT INTO `cards` VALUES (40, 2, '2c.bmp');
+INSERT INTO `cards` VALUES (41, 3, '3c.bmp');
+INSERT INTO `cards` VALUES (42, 4, '4c.bmp');
+INSERT INTO `cards` VALUES (43, 5, '5c.bmp');
+INSERT INTO `cards` VALUES (44, 6, '6c.bmp');
+INSERT INTO `cards` VALUES (45, 7, '7c.bmp');
+INSERT INTO `cards` VALUES (46, 8, '8c.bmp');
+INSERT INTO `cards` VALUES (47, 9, '9c.bmp');
+INSERT INTO `cards` VALUES (48, 10, '10c.bmp');
+INSERT INTO `cards` VALUES (49, 10, 'vc.bmp');
+INSERT INTO `cards` VALUES (50, 10, 'dc.bmp');
+INSERT INTO `cards` VALUES (51, 10, 'kc.bmp');
+INSERT INTO `cards` VALUES (52, 1, 'tc.bmp');
+ALTER TABLE `users` ADD `bjwins` int(10) NOT NULL default '0';
+ALTER TABLE `users` ADD `bjlosses` int(10) NOT NULL default '0';								
+</textarea>
+							
+						</td>
+				</table>
+			</div>
+			<br />
+						<div class='tableborder'>
+				<div class='maintitle'>Step 5: Link to the file to play</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' valign='middle'>
+Create a link to blackjack.php in the header of your theme, or create a block to play. bjstats.php is already linked in the game file, so there is no real need to create a new link, unless you want to. You can find a link to that file when you launch the blackjack file
+							<br />
+							<br />
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<br />
+			<br />
+			<center>
+				<span id='copy'>
+					Blackjack TT 3.0 PHP 7</a>
+				</span>
+			</center>
+		</div>
+	</body>
+</html>
