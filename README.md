@@ -1,5 +1,3 @@
-# Blackjack-for-TTv3
-A blackjack game for use with torrenttrader v3
 <html>
 	<head>
 		<title>TT 3.0 PHP 7 Blackjack Install Instructions</title>
