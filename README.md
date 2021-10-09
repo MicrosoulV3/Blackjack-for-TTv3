@@ -1,23 +1,6 @@
 <html>
 	<head>
 		<title>TT 3.0 PHP 7 Blackjack Install Instructions</title>
-		<style type='text/css'>
-			BODY { font-size:11px; font-family:Verdana,Arial; color:#000; margin:0px; padding:0px; background-image:url(./ignore_this_folder/fadebg.jpg); background-repeat:no-repeat; background-position:right bottom; }
-			TABLE, TR, TD { font-family:Verdana,Arial;font-size:11px; color:#000; }
-			TEXTAREA { background-color:#DFE6EF; font-size:11px; overflow:hidden; }
-			a:link, a:visited, a:active { color:#000055; }
-			a:hover { color:#333377; text-decoration:underline; }
-			.tdrow1 { background-color:#EEF2F7; border-bottom:1px solid #D1DCEB; border-right:1px solid #D1DCEB; border-top:1px solid #FFF; border-left:1px solid #FFF; font-size:12px; }
-			.tdrow2 { background-color:#F5F9FD; border-bottom:1px solid #D1DCEB; border-right:1px solid #D1DCEB; border-top:1px solid #FFF; border-left:1px solid #FFF; font-size:12px; }
-			.warnbox { border:1px solid #F00; background:#FFE0E0; padding:6px; margin-right:10%; margin-left:10%; text-align:left; }
-			.pformstrip { background-color:#D1DCEB; color:#3A4F6C; font-weight:bold; padding:7px; margin-top:1px; text-align:left; }
-			.tableborder { border:1px solid #345487; background-color:#FFF; padding:0px; margin:0px; width:100%; }
-			.maintitle { text-align:left; vertical-align:middle; font-weight:bold; color:#000; letter-spacing:1px; padding:8px 0px 8px 5px; background-image:url(./ignore_this_folder/tile_back.gif); }
-			.fade { background-image:url(./ignore_this_folder/fade.jpg); background-repeat:repeat-x; }
-			#copy { font-size:10px; }
-			#button { background-color:#4C77B6; color:#FFFFFF; font-family:Verdana,Arial; font-size:11px; }
-			#logostrip { padding:0px; margin:0px; background:#3860BB url(./ignore_this_folder/tile_back.gif); }
-		</style>
 	</head>
 	<body marginheight='0' marginwidth='0' leftmargin='0' topmargin='0' bgcolor='#FFFFFF'>
 		<div id='logostrip'><img src='./' border='0' alt='TT 3.0 Mod' /></div>
