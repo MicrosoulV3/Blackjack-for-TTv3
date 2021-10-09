@@ -1,6 +1,7 @@
-<html>
 	<body marginheight='0' marginwidth='0' leftmargin='0' topmargin='0' bgcolor='#FFFFFF'>
-
+		<div id='logostrip'><img src='./' border='0' alt='TT 3.0 Mod' /></div>
+		<div class='fade'>&nbsp;</div>
+		<br />
 		<div class='warnbox' style='text-align:center;'>
 			<strong>TT 3.0 PHP 7 Blackjack Install Instructions</strong>
 		</div>
@@ -280,3 +281,4 @@ Create a link to blackjack.php in the header of your theme, or create a block to
 		</div>
 	</body>
 </html>
+
