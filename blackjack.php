@@ -3,7 +3,7 @@ require_once("backend/functions.php");
 dbconn(false);
 
 if ($CURUSER["class"] < "1") {
-    show_error_msg("Sorry...", "I dont know why everyone wouldnt be able to play so...This setting is stupid, but do as you will", 1);
+    show_error_msg("Sorry...", "You must be a Crazy Seeder or above to play Blackjack.", 1);
 }
 
 if (!function_exists('get_user_name')) {
@@ -161,14 +161,14 @@ if ($_POST["game"]) {
                     SQL_Query_exec("delete from blackjack where userid=$a[userid]");
                     $dt = sqlesc(get_date_time());
                     $msg = sqlesc("You lost to $CURUSER[username] (you got $a[points] points, and $CURUSER[username] got 21 points).\n\n [url=".$site_config["SITEURL"]."/blackjack.php]Play again![/url]");
-                    SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $dbqueryreturn[userid], $dt, $msg, 0)");
+                    SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $a[userid], $dt, $msg, 0)");
                 } else {
                     $winorlose = "nobody won";
                     SQL_Query_exec("delete from blackjack where userid=$CURUSER[id]");
                     SQL_Query_exec("delete from blackjack where userid=$a[userid]");
                     $dt = sqlesc(get_date_time());
                     $msg = sqlesc("You tied with $CURUSER[username] (Both of you had $a[points] points).\n\n [url=".$site_config["SITEURL"]."/blackjack.php]Play again![/url]");
-                    SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $dbqueryreturn[userid], $dt, $msg, 0)");
+                    SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $a[userid], $dt, $msg, 0)");
                     
                 }
                 print("<tr><td align=center>" .T_("YOUR_OPPONENT_WAS"). " " . get_user_name($a["userid"]) . ", " .T_("THEY_HAD"). " $a[points] points, $winorlose.<br /><br /><center><b><a href=blackjack.php>" .T_("PLAY_AGAIN"). "</a></b></center></td></tr>");
@@ -200,7 +200,7 @@ if ($_POST["game"]) {
                     SQL_Query_exec("delete from blackjack where userid=$a[userid]");
                     $dt = sqlesc(get_date_time());
                     $msg = sqlesc("Your opponent was $CURUSER[username], Nobody won.\n\n [url=".$site_config["SITEURL"]."/blackjack.php]" .T_("BACK"). "[/url]");
-                    SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $dbqueryreturn[userid], $dt, $msg, 0)");
+                    SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $a[userid], $dt, $msg, 0)");
                 } else {
                     $winorlose = "you lost " . mksize($mb);
                     SQL_Query_exec("update users set uploaded = uploaded - $mb, bjlosses = bjlosses + 1 where id=$CURUSER[id]");
@@ -209,7 +209,7 @@ if ($_POST["game"]) {
                     SQL_Query_exec("delete from blackjack where userid=$a[userid]");
                     $dt = sqlesc(get_date_time());
                     $msg = sqlesc("You beat $CURUSER[username] (You had $a[points] points, $CURUSER[username] had $points points).\n\n [url=".$site_config["SITEURL"]."/blackjack.php]" .T_("BACK"). "[/url]");
-                    SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $dbqueryreturn[userid], $dt, $msg, 0)");
+                    SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $a[userid], $dt, $msg, 0)");
                 }
                 print("<tr><td align=center>Your opponent was " . get_user_name($a["userid"]) . ", They had $a[points] points, $winorlose.<br /><br /><center><b><a href=blackjack.php>Play again</a></b></center></td></tr>");
             } else {
@@ -273,7 +273,7 @@ if ($_POST["game"]) {
                 SQL_Query_exec("delete from blackjack where userid=$a[userid]");
                 $dt = sqlesc(get_date_time());
                 $msg = sqlesc("Your opponent was $CURUSER[username], you both had $a[points] points - it was a tie.\n\n [url=".$site_config["SITEURL"]."/blackjack.php]Play Again[/url]");
-                SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $dbqueryreturn[userid], $dt, $msg, 0)");
+                SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $a[userid], $dt, $msg, 0)");
             } elseif ($a["points"] < $playerarr['points'] && $a['points'] < 21) {
                 $winorlose = "you won " . mksize($mb);
                 SQL_Query_exec("update users set uploaded = uploaded + $mb, bjwins = bjwins + 1 where id=$CURUSER[id]");
@@ -282,7 +282,7 @@ if ($_POST["game"]) {
                 SQL_Query_exec("delete from blackjack where userid=$a[userid]");
                 $dt = sqlesc(get_date_time());
                 $msg = sqlesc("You lost to $CURUSER[username] (You had $a[points] points, $CURUSER[username] had $playerarr[points] points).\n\n [url=".$site_config["SITEURL"]."/blackjack.php]Play Again[/url]");
-                SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $dbqueryreturn[userid], $dt, $msg, 0)");
+                SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $a[userid], $dt, $msg, 0)");
             } elseif ($a["points"] > $playerarr['points'] && $a['points'] < 21) {
                 $winorlose = "you lost " . mksize($mb);
                 SQL_Query_exec("update users set uploaded = uploaded - $mb, bjlosses = bjlosses + 1 where id=$CURUSER[id]");
@@ -291,7 +291,7 @@ if ($_POST["game"]) {
                 SQL_Query_exec("delete from blackjack where userid=$a[userid]");
                 $dt = sqlesc(get_date_time());
                 $msg = sqlesc("You beat $CURUSER[username] (You had $a[points] points, $CURUSER[username] had $playerarr[points] points).\n\n [url=".$site_config["SITEURL"]."/blackjack.php]Play Again[/url]");
-                SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $dbqueryreturn[userid], $dt, $msg, 0)");
+                SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $a[userid], $dt, $msg, 0)");
             } elseif ($a["points"] == 21) {
                 $winorlose = "you lost " . mksize($mb);
                 SQL_Query_exec("update users set uploaded = uploaded - $mb, bjlosses = bjlosses + 1 where id=$CURUSER[id]");
@@ -300,7 +300,7 @@ if ($_POST["game"]) {
                 SQL_Query_exec("delete from blackjack where userid=$a[userid]");
                 $dt = sqlesc(get_date_time());
                 $msg = sqlesc("You beat $CURUSER[username] (You had $a[points] points, $CURUSER[username] had $playerarr[points] points).\n\n [url=".$site_config["SITEURL"]."/blackjack.php]Play Again[/url]");
-                SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $dbqueryreturn[userid], $dt, $msg, 0)");
+                SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $a[userid], $dt, $msg, 0)");
             } elseif ($a["points"] < $playerarr['points'] && $a['points'] > 21) {
                 $winorlose = "you lost " . mksize($mb);
                 SQL_Query_exec("update users set uploaded = uploaded - $mb, bjlosses = bjlosses + 1 where id=$CURUSER[id]");
@@ -309,7 +309,7 @@ if ($_POST["game"]) {
                 SQL_Query_exec("delete from blackjack where userid=$a[userid]");
                 $dt = sqlesc(get_date_time());
                 $msg = sqlesc("You beat $CURUSER[username] (You had $a[points] points, $CURUSER[username] had $playerarr[points] points).\n\n [url=".$site_config["SITEURL"]."/blackjack.php]Play Again[/url]");
-                SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $dbqueryreturn[userid], $dt, $msg, 0)");
+                SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $a[userid], $dt, $msg, 0)");
             } elseif ($a["points"] > $playerarr['points'] && $a['points'] > 21) {
                 $winorlose = "you won " . mksize($mb);
                 SQL_Query_exec("update users set uploaded = uploaded + $mb, bjwins = bjwins + 1 where id=$CURUSER[id]");
@@ -318,7 +318,7 @@ if ($_POST["game"]) {
                 SQL_Query_exec("delete from blackjack where userid=$a[userid]");
                 $dt = sqlesc(get_date_time());
                 $msg = sqlesc("You lost to $CURUSER[username] (You had $a[points] points, $CURUSER[username] had $playerarr[points] points).\n\n [url=".$site_config["SITEURL"]."/blackjack.php]Play Again[/url]");
-                SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $dbqueryreturn[userid], $dt, $msg, 0)");
+                SQL_Query_exec("INSERT INTO messages (subject, sender, receiver, added, msg, poster) VALUES('Blackjack game', 0, $a[userid], $dt, $msg, 0)");
             }
             print("<tr><td align=center>Your opponent was " . get_user_name($a["userid"]) . ", they had $a[points] points, $winorlose.<br /><br /><center><b><a href=blackjack.php>Play again</a></b></center></td></tr>");
         } else {
@@ -363,4 +363,3 @@ onclick=window.open('info_blackjack.html','wclose','width=820','height=864','too
     end_frame();
     stdfoot();
 }
-?>
