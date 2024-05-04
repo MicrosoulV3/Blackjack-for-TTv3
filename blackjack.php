@@ -3,7 +3,7 @@ require_once("backend/functions.php");
 dbconn(false);
 
 if ($CURUSER["class"] < "1") {
-    show_error_msg("Sorry...", "You must be a Crazy Seeder or above to play Blackjack.", 1);
+    show_error_msg("Sorry...", "this is a stupid setting", 1);
 }
 
 if (!function_exists('get_user_name')) {
